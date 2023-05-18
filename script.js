@@ -15,4 +15,12 @@ function resizeSvg(){
         rect.setAttribute('height', Math.min(window.innerWidth, window.innerHeight) * 0.06);
     }
 
+    for(let text of svg.children){
+        if (window.innerWidth > window.innerHeight) {
+            text.setAttribute('font-size', Math.min(window.innerWidth, window.innerHeight) * 0.05);
+        } else {
+            text.setAttribute('font-size', Math.max(window.innerWidth, window.innerHeight) * 0.05);
+        }
+    }
+
 }
